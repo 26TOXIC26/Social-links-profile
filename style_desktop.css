@@ -10,17 +10,20 @@ body
     background-color: hsl(0, 0%, 8%);
     display: grid;
     place-items: center;
+    overflow: hidden;
 }
 
 .main{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     width: 500px;
     /* height: 700px; */
     background-color: hsl(0, 0%, 12%);
     border-radius: 15px;
     margin-top: 150px;
+    padding-bottom: 30px;
     transition: all 0.3s ;
 
 }
@@ -39,7 +42,7 @@ body
 .main h3
 {
     margin-top: -25px;
-    color: hsl(75, 94%, 57%);
+    color: #5454D4;
 }
 
 .main p{
@@ -99,4 +102,108 @@ body
     scale: 1.01;
     transition: all 0.5s ease-in-out;
     background-color: hsl(0, 0%, 14%);
+}
+
+/* Add this to your style_desktop.css */
+
+/* Right side scribble */
+.scribble-animate {
+    z-index: -40;
+    position: absolute;
+    top: 250px;
+    right: 0px;
+    width: 2050px;
+    height: 50px;
+    border-radius: 200px;
+    background: linear-gradient(to right, #fba91c34, #e0568963);
+    filter: blur(180px);
+    transform: rotate(-30deg);
+    animation: scribbleMove 6s ease-in-out infinite;
+}
+@media (min-width: 768px) {
+    .scribble-animate {
+        width: 300px;
+        height: 100px;
+        top: 150px;
+        right: -100px;
+    }
+}
+@media (min-width: 1024px) {
+    .scribble-animate {
+        width: 500px;
+        height: 150px;
+        top: 200px;
+        right: -300px;
+    }
+}
+@media (min-width: 1280px) {
+    .scribble-animate {
+        width: 1000px;
+        height: 200px;
+        top: 200px;
+        right: -600px;
+    }
+}
+@media (min-width: 1536px) {
+    .scribble-animate {
+        top: 200px;
+        right: -800px;
+    }
+}
+
+/* Left side scribble */
+.scribble-animate-left {
+    z-index: -40;
+    position: absolute;
+    top: 750px;
+    left: -200px;
+    width: 1400px;
+    height: 60px;
+    border-radius: 200px;
+    background: linear-gradient(to right, #99359641, #5b2e917e);
+    filter: blur(140px);
+    transform: rotate(20deg);
+    animation: scribbleMoveLeft 7s ease-in-out infinite;
+}
+@media (min-width: 768px) {
+    .scribble-animate-left {
+        width: 350px;
+        height: 90px;
+        top: 700px;
+        left: -120px;
+    }
+}
+@media (min-width: 1024px) {
+    .scribble-animate-left {
+        width: 500px;
+        height: 130px;
+        top: 720px;
+        left: -250px;
+    }
+}
+@media (min-width: 1280px) {
+    .scribble-animate-left {
+        width: 1000px;
+        height: 180px;
+        top: 750px;
+        left: -400px;
+    }
+}
+@media (min-width: 1536px) {
+    .scribble-animate-left {
+        top: 780px;
+        left: -600px;
+    }
+}
+
+/* Animations */
+@keyframes scribbleMove {
+    0% { transform: translateY(0) rotate(-30deg) scale(1); }
+    50% { transform: translateY(-40px) rotate(-28deg) scale(1.05); }
+    100% { transform: translateY(0) rotate(-30deg) scale(1); }
+}
+@keyframes scribbleMoveLeft {
+    0% { transform: translateY(0) rotate(20deg) scale(1); }
+    50% { transform: translateY(30px) rotate(22deg) scale(1.07); }
+    100% { transform: translateY(0) rotate(20deg) scale(1); }
 }
